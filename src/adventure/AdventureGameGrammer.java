@@ -10,6 +10,11 @@ import java.util.Map;
 
 public class AdventureGameGrammer implements Grammer
 {
+    /**
+     *  Grammer is stored as a Hashmap
+     *      key = actionId
+     *      value = GameAction
+     * */
     Map<String, GameAction> grammer = new HashMap<String, GameAction>();
 
     @Override
