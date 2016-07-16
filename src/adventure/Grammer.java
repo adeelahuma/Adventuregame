@@ -27,6 +27,9 @@ public interface Grammer
 
     /**
      *  Add gameAction to Grammer
+     *  @param gameAction object
+     *  @return boolean - true- if action is added in grammer
+     *                    false - if action is not added in grammer
      * */
     public boolean addAction(GameAction gameAction);
 

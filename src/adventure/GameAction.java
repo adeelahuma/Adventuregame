@@ -9,7 +9,7 @@ import java.util.List;
 public class GameAction
 {
     private String id;
-    List<String> patterns;
+    private List<String> patterns;
 
 
     public String getId() {
@@ -26,5 +26,25 @@ public class GameAction
 
     public void setPatterns(List<String> patterns) {
         this.patterns = patterns;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        GameAction that = (GameAction) o;
+
+        if (id != null ? !id.equals(that.id) : that.id != null) return false;
+        if (patterns != null ? !patterns.equals(that.patterns) : that.patterns != null) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (patterns != null ? patterns.hashCode() : 0);
+        return result;
     }
 }
