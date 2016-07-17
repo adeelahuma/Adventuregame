@@ -19,7 +19,7 @@ public interface Grammer
      * @param  actionId
      * @return List<String> - List of patterns associated with an actionId
      *         For example: 1. put {object} in {object}
-                            2. put {object} on {object}
+     *                      2. put {object} on {object}
      *
      *
      * */
@@ -28,9 +28,7 @@ public interface Grammer
     /**
      *  Add gameAction to Grammer
      *  @param gameAction object
-     *  @return boolean - true- if action is added in grammer
-     *                    false - if action is not added in grammer
      * */
-    public boolean addAction(GameAction gameAction);
+    public void addAction(GameAction gameAction);
 
 }

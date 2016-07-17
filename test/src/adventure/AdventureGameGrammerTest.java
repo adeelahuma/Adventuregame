@@ -74,7 +74,14 @@ public class AdventureGameGrammerTest
     public void addGameAction()
     {
 
-        Assert.assertTrue("Insert Action added", grammer.addAction(getInsertGameAction()));
+        GameAction action = getInsertGameAction();
+
+        Assert.assertNull("Insert Action not found", grammer.getGameAction(action.getId()));
+
+        //Add action
+        grammer.addAction(action);
+
+        Assert.assertNotNull("Insert Action found", grammer.getGameAction(action.getId()));
 
     }
 
@@ -83,8 +90,7 @@ public class AdventureGameGrammerTest
     {
         GameAction putGA = getPutOnGameAction();
 
-        Assert.assertTrue("Put-on-top Action added",grammer.addAction(putGA));
-
+        grammer.addAction(putGA);
         GameAction putGA_1 = grammer.getGameAction(putGA.getId());
 
         Assert.assertNotNull(putGA_1);

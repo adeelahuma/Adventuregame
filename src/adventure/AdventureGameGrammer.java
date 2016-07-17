@@ -50,16 +50,13 @@ public class AdventureGameGrammer implements Grammer
 
 
     @Override
-    public boolean addAction(GameAction gameAction)
+    public void addAction(GameAction gameAction)
     {
-        boolean actionAdded= false;
 
         if(gameAction != null && gameAction.getId() != null)
         {
             grammer.put(gameAction.getId(), gameAction);
-            actionAdded = true;
         }
 
-        return actionAdded;
     }
 }
